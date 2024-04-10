@@ -1,0 +1,65 @@
+img{
+    height: 10%;
+    width: 20%;
+}
+h1{
+    color: palevioletred;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2em;
+}
+.logo{
+    font-weight: bolder;
+    font-size: 2vw;
+}
+.location{
+    display:flex;
+    align-items: center;
+    gap: 1em;
+    font-weight: lighter;
+    color: rgba(128, 128, 128, 0.728);
+}
+
+.current_info{
+    padding: 2%;
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-evenly;
+    gap:3em;
+}
+
+.current_temp{
+    display: flex;
+    justify-content: left;
+    gap: 10em;
+}
+.current_temp_1 {
+    display: flex;
+    flex-direction: column;
+    align-items: justify;
+    text-align: justify;
+}
+.current_stats{
+    height: 200px;
+    width: 500px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.current_stats>div{
+    display: block;
+}
+.current_temp_1 img {
+    width: 100px; /* Adjust the width as needed */
+    height: auto; /* Ensures the aspect ratio is maintained */
+    margin-bottom: 10px; /* Adds some space between the image and paragraphs */
+}
+
+

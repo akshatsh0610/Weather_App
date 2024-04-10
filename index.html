@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="./Utilities/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./Utilities/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./Utilities/favicon-16x16.png">
+    <link rel="manifest" href="./Utilities/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Montserrat:wght@300;400;500&family=PT+Serif:ital,wght@0,400;1,700&family=Poppins:wght@200;300;400;700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/regular.min.css" integrity="sha512-De7THrOr7M9dmDMBVMfyDfYypLtaH9KnvpfZ3PENIwAS0Od6Eh0M0EMucYwouLEZSaPL/PFQRQzg2Zir4tF2UQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="layout.css">
+</head>
+<body>
+    <!-- weather app -->
+    <main class="wrapper">
+
+        <!-- navbar -->
+        <nav class="navbar">
+            <div class="logo">WeatherWhiz</div>
+            <div class="location">
+                <i class="fa-solid fa-location-dot"></i>
+                <form onsubmit="handleWeather()">
+                    <input type="text" placeholder="Enter Location ..." value="India">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </nav>
+        <!-- navbar -->
+
+        <!-- current temp + stats -->
+        <div class="current_info">
+            <div class="current_temp">
+                <div class="current_temp_1">
+                    <img src="./Utilities/cloudy_day.svg">
+                    <p class="sunrise"></p>
+                    <p class="sunset"></p>
+                </div>
+                <div class="current_temp_2">
+                    <p class="curr_date"></p>
+                    <h1 class="curr_temp">Current temp</h1>
+                    <p class="curr_info">Weather info</p>
+                </div>
+                <div class="current_temp_3">
+                    <h4>More details</h4>
+                    <p class="wind_speed"></p>
+                    <p class="air_hum"></p>
+                    <p class="pressure"></p>
+                    <p class="prec_prob"></p>
+                </div>
+            </div>
+            <div class="current_stats">
+                <div class="morning_stats">
+                    <p>Morning</p>
+                    <div class="morning_stats_1">
+                        <img src="./Utilities/cloudy_day.svg">
+                        <p>Temperature</p>
+                        <p>Time</p>
+                    </div>
+                    <div class="morning_stats_2">
+                        <img src="./Utilities/cloudy_day.svg">
+                        <p>Temperature</p>
+                        <p>Time</p>
+                    </div>
+                </div>
+                <div class="day_stats">
+                    <p>Day</p>
+                    <div class="day_stats_1">
+                        <img src="./Utilities/sunny_day.svg">
+                        <p>Temperature</p>
+                        <p>Time</p>
+                    </div>
+                    <div class="day_stats_2">
+                        <img src="./Utilities/sunny_day.svg">
+                        <p>Temperature</p>
+                        <p>Time</p>
+                    </div>
+                </div>
+                <div class="evening_stats">
+                    <p>Evening</p>
+                    <div class="evening_stats_1">
+                        <img src="./Utilities/2682825_evening_horizon_sun_sundown_sunset_icon.svg">
+                        <p>Temperature</p>
+                        <p>Time</p>
+                    </div>
+                    <div class="evening_stats_2">
+                        <img src="./Utilities/2682825_evening_horizon_sun_sundown_sunset_icon.svg">
+                        <p>Temperature</p>
+                        <p>Time</p>
+                    </div>
+                </div>
+                <div class="night_stats">
+                    <p>Night</p>
+                    <div class="night_stats_1">
+                        <img src="./Utilities/1530377_weather_fog_foggy_moon_night_icon.svg">
+                        <p>Temperature</p>
+                        <p>Time</p>
+                    </div>
+                    <div class="night_stats_2">
+                        <img src="./Utilities/1530377_weather_fog_foggy_moon_night_icon.svg">
+                        <p>Temperature</p>
+                        <p>Time</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- current temp + stats -->
+
+        <!-- next 7 days temp -->
+        <div class="next_7_days_info"></div>
+        <!-- next 7 days temp -->
+    </main>
+    <!-- weather app -->
+    <script src="script.js"></script>
+</body>
+</html>
