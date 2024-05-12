@@ -1,65 +1,219 @@
-img{
-    height: 10%;
-    width: 20%;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-h1{
-    color: palevioletred;
+:root{
+    --heading-color:#F1F1F1;
+    --text-color:#747264;
 }
-.wrapper{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+body{
+    font-size: 67.5%;
+    font-family: "Montserrat", sans-serif;
+    background: url('./Utilities/Nature-Photography-105.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgb(60, 59, 59);
+    background-blend-mode: multiply;
+    transition: all 5s ease-in-out;
 }
-
 .navbar{
+    margin-top: 1.8rem;
     display: flex;
-    justify-content: space-evenly;
-    gap: 2em;
+    justify-content: space-between;
+    align-items: center;
 }
 .logo{
-    font-weight: bolder;
-    font-size: 2vw;
+    margin-left: 4rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    background-color: #f1f1f1cc;
+    backdrop-filter: blur(10px);
+    color: #F72798;
+    border-radius: 4px;
 }
 .location{
-    display:flex;
+    position: relative;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 1em;
-    font-weight: lighter;
-    color: rgba(128, 128, 128, 0.728);
+    gap: 1rem;
+    margin-right: 4rem;
+}
+.location>i{
+    font-size: 1.5rem;
+    color: #5AB2FF;
 }
 
+.location>form{
+    display: flex;
+    gap: 1rem;
+}
+.location>form>input{
+    width:15vw;
+    font-size: 1rem;
+    padding: 0.8rem;
+    background-color: #eaf7f231;
+    color: whitesmoke;
+    border: transparent;
+    border-radius: 20px;
+}
+.btn{
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+    align-self: center;
+    height: fit-content;
+    color: #F1F1F1;
+    background-color: #FF70AB;
+    border: transparent;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: #F72798;
+}
 .current_info{
-    padding: 2%;
-    margin-top: 10%;
-    display: flex;
-    justify-content: space-evenly;
-    gap:3em;
-}
-
-.current_temp{
-    display: flex;
-    justify-content: left;
-    gap: 10em;
-}
-.current_temp_1 {
+    margin-top: 3%;
+    gap: 1rem;
     display: flex;
     flex-direction: column;
-    align-items: justify;
-    text-align: justify;
+    align-items: center;
+}
+.curr_location{
+    margin-left: 4rem;
+    align-self: flex-start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.curr_location>i{
+    color: #5AB2FF;
+    font-size: 1rem;
+}
+.curr_location_name{
+    font-size: 1.5rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    color: var(--heading-color);
+}
+.curr_location_dir{
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    color: var(--text-color);
+    align-self: flex-start;
+    margin-left: 4rem;
+}
+.current_temp{
+    display: flex;
+    margin: 0 1.2rem;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10rem;
+    background-color:#a9acac30;
+    backdrop-filter: blur(5px);
+    padding: 2rem 2.5rem;
+    border-radius: 20px;
+}
+.current_temp_1>p{
+    font-size: 1rem;
+    color: var(--text-color);
+    word-spacing: 8px;
+}
+.current_temp_2,.current_temp_3{
+    margin-top: 5%;
+}
+.current_temp_2>h1{
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    color: var(--heading-color);
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+.current_temp_2>p{
+    font-size: 1rem;
+    color: var(--text-color);
+}
+.current_temp_3>h4{
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    color: var(--heading-color);
+    font-size: 1.5rem;
+}
+.current_temp_3>p{
+    font-size: 1rem;
+    color: var(--text-color);
+    padding: 1rem 0 0 0;
 }
 .current_stats{
-    height: 200px;
-    width: 500px;
     display: flex;
+    align-items: center;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1rem;
 }
-.current_stats>div{
-    display: block;
+.current_stats .card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color:#a9acac30;
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    cursor: pointer;
 }
-.current_temp_1 img {
-    width: 100px; /* Adjust the width as needed */
-    height: auto; /* Ensures the aspect ratio is maintained */
-    margin-bottom: 10px; /* Adds some space between the image and paragraphs */
+.card:hover{
+    background-color:#dadbdb30;
 }
-
-
+.current_stats .card .status{
+    font-size: 1.5rem;
+    color: var(--heading-color);
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+.current_stats .card .stats{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    padding: 1rem 2rem;
+}
+.current_stats .card .stats>div{
+    padding: 1rem 0;
+}
+.current_stats .card .stats>div>p{
+    margin-top: 0.8rem;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+footer{
+    margin-top: 4rem;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 1rem;
+    background-color: #0c0c0c31;
+    color: var(--heading-color);
+}
+@media((width<=992px) and (width>550px)) {
+    body{
+        font-size: 55%;
+    }
+    .current_temp_3{
+        display: none;
+    }
+}
+@media(width<=550px){
+    body{
+        font-size: 45%;
+    }
+    .current_temp_3{
+        display: none;
+    }
+}

@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/regular.min.css" integrity="sha512-De7THrOr7M9dmDMBVMfyDfYypLtaH9KnvpfZ3PENIwAS0Od6Eh0M0EMucYwouLEZSaPL/PFQRQzg2Zir4tF2UQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="layout.css">
 </head>
 <body>
     <!-- weather app -->
@@ -26,8 +25,8 @@
             <div class="location">
                 <i class="fa-solid fa-location-dot"></i>
                 <form onsubmit="handleWeather()">
-                    <input type="text" placeholder="Enter Location ..." value="India">
-                    <button type="submit">Submit</button>
+                    <input type="text" placeholder="Enter Location ..." value="New Delhi">
+                    <button class="btn" type="submit">Submit</button>
                 </form>
             </div>
         </nav>
@@ -35,11 +34,17 @@
 
         <!-- current temp + stats -->
         <div class="current_info">
+            <div class="curr_location">
+                <i class="fa-solid fa-location-dot"></i>
+                <p class="curr_location_name">Delhi , India</p>
+            </div>
+            <p class="curr_location_dir"></p>
+            <!-- current temperature -->
             <div class="current_temp">
                 <div class="current_temp_1">
                     <img src="./Utilities/cloudy_day.svg">
                     <p class="sunrise"></p>
-                    <p class="sunset"></p>
+                    <p class="sunset" style="margin-top: 1rem;"></p>
                 </div>
                 <div class="current_temp_2">
                     <p class="curr_date"></p>
@@ -54,66 +59,78 @@
                     <p class="prec_prob"></p>
                 </div>
             </div>
+            <!-- current temperature -->
+
+            <!-- current stats -->
             <div class="current_stats">
-                <div class="morning_stats">
-                    <p>Morning</p>
-                    <div class="morning_stats_1">
-                        <img src="./Utilities/cloudy_day.svg">
-                        <p>Temperature</p>
-                        <p>Time</p>
-                    </div>
-                    <div class="morning_stats_2">
-                        <img src="./Utilities/cloudy_day.svg">
-                        <p>Temperature</p>
-                        <p>Time</p>
-                    </div>
-                </div>
-                <div class="day_stats">
-                    <p>Day</p>
-                    <div class="day_stats_1">
-                        <img src="./Utilities/sunny_day.svg">
-                        <p>Temperature</p>
-                        <p>Time</p>
-                    </div>
-                    <div class="day_stats_2">
-                        <img src="./Utilities/sunny_day.svg">
-                        <p>Temperature</p>
-                        <p>Time</p>
+                <div class="card morning_stats">
+                    <p class="status">Morning</p>
+                    <div class="stats">
+                        <div class="morning_stats_1">
+                            <img src="./Utilities/cloudy_day.svg">
+                            <p class="morning_temp_1"></p>
+                            <p class="morning_time_1"></p>
+                        </div>
+                        <div class="morning_stats_2">
+                            <img src="./Utilities/cloudy_day.svg">
+                            <p class="morning_temp_2"></p>
+                            <p class="morning_time_2"></p>
+                        </div>
                     </div>
                 </div>
-                <div class="evening_stats">
-                    <p>Evening</p>
-                    <div class="evening_stats_1">
-                        <img src="./Utilities/2682825_evening_horizon_sun_sundown_sunset_icon.svg">
-                        <p>Temperature</p>
-                        <p>Time</p>
-                    </div>
-                    <div class="evening_stats_2">
-                        <img src="./Utilities/2682825_evening_horizon_sun_sundown_sunset_icon.svg">
-                        <p>Temperature</p>
-                        <p>Time</p>
+                <div class="card day_stats">
+                    <p class="status">Day</p>
+                    <div class="stats">
+                        <div class="day_stats_1">
+                            <img src="./Utilities/sunny_day.svg">
+                            <p class="day_temp_1"></p>
+                            <p class="day_time_1"></p>
+                        </div>
+                        <div class="day_stats_2">
+                            <img src="./Utilities/sunny_day.svg">
+                            <p class="day_temp_2"></p>
+                            <p class="day_time_2"></p>
+                        </div>
                     </div>
                 </div>
-                <div class="night_stats">
-                    <p>Night</p>
-                    <div class="night_stats_1">
-                        <img src="./Utilities/1530377_weather_fog_foggy_moon_night_icon.svg">
-                        <p>Temperature</p>
-                        <p>Time</p>
+                <div class="card evening_stats">
+                    <p class="status">Evening</p>
+                    <div class="stats">
+                        <div class="evening_stats_1">
+                            <img src="./Utilities/2682825_evening_horizon_sun_sundown_sunset_icon.svg">
+                            <p class="evening_temp_1"></p>
+                            <p class="evening_time_1"></p>
+                        </div>
+                        <div class="evening_stats_2">
+                            <img src="./Utilities/2682825_evening_horizon_sun_sundown_sunset_icon.svg">
+                            <p class="evening_temp_2"></p>
+                            <p class="evening_time_2"></p>
+                        </div>
                     </div>
-                    <div class="night_stats_2">
-                        <img src="./Utilities/1530377_weather_fog_foggy_moon_night_icon.svg">
-                        <p>Temperature</p>
-                        <p>Time</p>
+                </div>
+                <div class="card night_stats">
+                    <p class="status">Night</p>
+                    <div class="stats">
+                        <div class="night_stats_1">
+                            <img src="./Utilities/1530377_weather_fog_foggy_moon_night_icon.svg">
+                            <p class="night_temp_1"></p>
+                            <p class="night_time_1"></p>
+                        </div>
+                        <div class="night_stats_2">
+                            <img src="./Utilities/1530377_weather_fog_foggy_moon_night_icon.svg">
+                            <p class="night_temp_2"></p>
+                            <p class="night_time_2"></p>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- current stats -->
         </div>
         <!-- current temp + stats -->
 
-        <!-- next 7 days temp -->
-        <div class="next_7_days_info"></div>
-        <!-- next 7 days temp -->
+        <footer>
+            <p>Made by Akshat Sharma ❤️</p>
+        </footer>
     </main>
     <!-- weather app -->
     <script src="script.js"></script>
