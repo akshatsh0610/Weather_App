@@ -36,7 +36,7 @@ const night_time2=document.querySelector('.night_time_2');
 async function handleWeather(){
   event.preventDefault();
   const location=document.querySelector('form input[type="text"]').value;
-  const apiUrl=`http://api.weatherapi.com/v1/forecast.json?key=755f6bfc62984db88bc171107221801&q=${location}&days=7&aqi=no&alerts=no`;
+  const apiUrl=`https://api.weatherapi.com/v1/forecast.json?key=755f6bfc62984db88bc171107221801&q=${location}&days=7&aqi=no&alerts=no`;
   const response=await fetch(apiUrl)
   if(response.status===200)
   {
